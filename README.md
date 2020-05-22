@@ -158,7 +158,7 @@ promise
 
 ```
 1. TypeScript 是 JavaScript 的一个超集。
-2. TypeScript 在 JavaScript 的基础之上多了类型系统，与对ECMScript 的新特性的支持。
+2. TypeScript 在 JavaScript 的基础之上多了类型系统，与对ECMAScript 的新特性的支持。
 3. TypeScript 最终会编译为 JavaScript。
 ```
 
