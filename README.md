@@ -84,7 +84,7 @@ obj.fn()
 Symbol 的用途就是作为对象属性的标识符。可以使用 Symbol 创建私有属性，定义对象的迭代器、toString 方法等。
 ```
 
-## 7、说说说明是浅拷贝、什么是深拷贝？
+## 7、说说什么是浅拷贝、什么是深拷贝？
 
 
 - 浅拷贝：仅仅是指向被复制的内存地址，如果原地址发生改变，那么浅拷贝出来的对象也会相应的改变。
@@ -92,6 +92,25 @@ Symbol 的用途就是作为对象属性的标识符。可以使用 Symbol 创�
 - 深拷贝：在计算机中开辟一块新的内存地址用于存放复制的对象。
 
 简单来说，浅拷贝只复制一层对象的属性，而深拷贝复制了所有层级。可以使用 JSON.parse(JSON.stringify(object))、或递归复制等实现深拷贝。
+
+递归实现如下
+```
+function deepClone(obj){
+    let objClone = Array.isArray(obj) ? [] : {};
+    if(obj && typeof obj === "object"){
+        for(key in obj){
+            if(obj.hasOwnProperty(key)){
+                if(obj[key] && typeof obj[key] === "object"){
+                    objClone[key] = deepClone(obj[key]);
+                }else{
+                    objClone[key] = obj[key];
+                }
+            }
+        }
+    }
+    return objClone;
+}    
+```
 
 
 
